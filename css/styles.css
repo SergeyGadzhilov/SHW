@@ -232,7 +232,7 @@ a.white {
 
 
 /*************************/
-/*     02. Preloader     */
+/*     Preloader     */
 /*************************/
 .spinner-wrapper {
 	position: fixed;
@@ -309,7 +309,7 @@ a.white {
 
 
 /**************************/
-/*     03. Navigation     */
+/*     Navigation     */
 /**************************/
 .navbar-custom {
 	background-color: #5f4dee;
@@ -447,7 +447,7 @@ a.white {
 
 
 /*********************/
-/*    04. Header     */
+/*    Header     */
 /*********************/
 .header {
 	background-color: #5f4dee;
@@ -584,6 +584,54 @@ a.white {
 
 .tabs #tab-3 .list-unstyled {
 	margin-bottom: 1.5rem;
+}
+
+/***********************************/
+/*     Download section     */
+/***********************************/
+.section__header{
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: 50px;
+}
+
+.download {
+	padding-bottom: 100px;
+	background-color: #f3f7fd;
+}
+
+.cards {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+}
+
+.card {
+	flex: 1 0 auto;
+	width: 260px;
+	height: 122px;
+	padding: 20px 20px;
+	box-shadow: 0 1px 4px 0 rgb(0 0 0 / 20%);
+}
+
+.card__content {
+	display: flex;
+}
+
+.card__logo {
+	height: 80px;
+	width: 80px;
+}
+
+.card__description{
+	margin-left: 25px;
+}
+
+.card__link,
+.card__link:hover{
+	color: #5f4dee;
+	text-decoration: underline;
 }
 
 /***********************************/

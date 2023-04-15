@@ -1,0 +1,58 @@
+.features{
+    padding: 8rem 0;
+
+    &_content {
+        display: flex;
+        width: 100%;
+    }
+
+    &_image{
+        flex-basis: 50%;
+        padding: 1rem;
+    }
+
+    &_text{
+        flex-basis: 50%;
+        padding: 1rem;
+
+        & > h3 {
+            margin-bottom: 1rem;
+            font: 700 1.625rem/2.125rem "Open Sans", sans-serif;
+        }
+
+        & > p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &_list{
+        margin-left: 1rem;
+        list-style-type: disc;
+
+        & > li {
+            margin: 0.5rem 0rem;
+        }
+    }
+}
+
+@media (max-width: 995px) {
+    .features{
+        &_content{
+            flex-direction: column;
+        }
+
+        &_text{
+            padding: 0;
+
+            & > h3,
+            & > p {
+                text-align: center;
+            }
+        }
+
+        &_image{
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+    }
+}

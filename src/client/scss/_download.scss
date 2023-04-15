@@ -1,0 +1,47 @@
+.download {
+    padding: 8rem 0;
+    background-color: #f3f7fd;
+
+    &__header{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 3rem;
+        font: 700 1.625rem/2.125rem "Open Sans", sans-serif;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 0 auto;
+    width: 260px;
+    height: 122px;
+    padding: 20px 20px;
+    margin: 5px;
+    box-shadow: 0 1px 4px 0 rgb(0, 0, 0.2);
+
+    &__content{
+        display: flex;
+    }
+
+    &__logo {
+        height: 80px;
+        width: 80px;
+    }
+
+    &__description{
+        margin-left: 25px;
+    }
+
+    &_link,
+    &__link:hover{
+        color: #5f4dee;
+        text-decoration: underline;
+    }
+}

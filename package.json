@@ -1,0 +1,40 @@
+{
+  "name": "shshare",
+  "version": "1.0.0",
+  "description": "shshare website",
+  "scripts": {
+    "build": "node scripts/build.js && npm run build:client && npm run build:server",
+    "build:client": "webpack",
+    "build:server": "npx tsc --build ./src/server/",
+    "start": "npm run build && cd ./dist && node index.js",
+    "clean": "node scripts/clean.js",
+    "watch": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hadzhilov Serhii",
+  "license": "GPLv3",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.11",
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.3",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,js,scss,ejs",
+    "delay": "3",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  }
+}

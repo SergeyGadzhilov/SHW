@@ -1,0 +1,28 @@
+.button{
+    display: inline-block;
+    border: 2px solid $accent-text-color;
+    color: $accent-color;
+    background-color: $accent-text-color;
+    text-decoration: none;
+    transition: all 0.2s;
+    font: 700 0.875rem/0 "Open Sans", sans-serif;
+    padding: 1.375rem 2.625rem;
+    border-radius: 2rem;
+
+    &:hover{
+        background-color: transparent;
+        color: $accent-text-color;
+    }
+
+    &-inverse{
+        color: $accent-text-color;
+        border: 2px solid $accent-text-color;
+        background-color: $accent-color;
+
+        &:hover {
+            background-color: transparent;
+            color: $base-text-color;
+            border: 2px solid $accent-color;
+        }
+    }
+}

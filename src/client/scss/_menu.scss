@@ -1,0 +1,98 @@
+.menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    color: $accent-text-color;
+    background-color: $accent-color;
+    padding: 0.5rem 1.5rem 0.5rem 2rem;
+    box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
+
+    &>.container {
+        display: flex;
+    }
+
+    &_logo {
+        display: inline-block;
+        color: $accent-text-color-active;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        padding: 0.325rem 0;
+    }
+
+    &_content{
+        display: flex;
+        flex-basis: auto;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    &_bar{
+        display: flex;
+    }
+
+    &_button{
+        display: none;
+        cursor: pointer;
+        margin-left: auto;
+        
+        &_line {
+            display: block;
+            height: 4px;
+            width: 30px;
+            margin: 5px;
+            background-color: $accent-text-color-active;
+        }
+    }
+
+    &_items{
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+    }
+
+    &_link{
+        color: inherit;
+        text-decoration: none;
+        padding: 0.25rem 0.75rem;
+        font-weight: 700;
+
+        &:hover,
+        &-active{
+            color: $accent-text-color-active;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        &>.container{
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            flex-direction: column;
+        }
+
+        &_items{
+            display: none;
+            flex-direction: column;
+            margin-left: 0;
+            flex-grow: 1;
+
+            &-active {
+                display: flex;
+            }
+        }
+
+        &_link {
+            display: block;
+            padding: 1rem 0rem;
+        }
+
+        &_button{
+            display: block;
+        }
+    }
+}

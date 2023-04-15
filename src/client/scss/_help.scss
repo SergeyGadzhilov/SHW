@@ -1,0 +1,49 @@
+.help{
+    padding: 8rem 0;
+
+    &__container{
+        display: flex;
+    }
+
+    &__image{
+        padding: 2rem;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+}
+
+.support_form{
+    &__item{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        & > label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__control {
+        padding: 10px 12px;
+        border-radius: 0.25rem;
+        border: 1px solid #ced4da;
+
+        &:focus{
+            color: #495057;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+    }
+}
+
+@media (max-width: 995px) {
+    .help{
+        &__container{
+            flex-direction: column;
+        }
+    }
+}

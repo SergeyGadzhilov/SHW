@@ -1,0 +1,43 @@
+.banner{
+    padding-top: 10rem;
+    color: $accent-text-color;
+    background-color: $accent-color;
+
+    &_content{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px -15px;
+        padding: 4rem 0px;
+    }
+
+    &_text{
+        flex-basis: 50%;
+        margin-bottom: 2rem;
+        
+
+        & > h1 {
+            margin-bottom: 1rem;
+        }
+
+        & > p {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &_image{
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner{
+        padding-top: 4rem;
+        &_content{
+            flex-direction: column;
+        }
+
+        &_text{
+            text-align: center;
+        }
+    }
+}

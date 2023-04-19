@@ -3,7 +3,7 @@ import { support } from "./routes/support";
 import { Settings } from "./app/Settings";
 import { Application } from "./app/Application";
 
-const settings = new Settings();
+const settings = Settings.getInstance();
 const app = new Application();
 
 app.registerStatic(__dirname + "/public");

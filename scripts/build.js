@@ -30,7 +30,7 @@ function build_views() {
 }
 
 function build_images() {
-  fs.cpSync("src/public/img", "dist/public/img", { recursive: true });
+  fs.cpSync("src/client/img", "dist/public/img", { recursive: true });
 }
 
 build_scss();

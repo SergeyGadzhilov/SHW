@@ -5,6 +5,8 @@ export class Application {
 
   constructor() {
     this._app.set("view engine", "ejs");
+    this._app.use(express.json());
+    this._app.use(express.urlencoded({ extended: true }));
   }
 
   registerStatic(dir: string) {

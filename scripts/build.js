@@ -33,6 +33,11 @@ function build_images() {
   fs.cpSync("src/client/img", "dist/public/img", { recursive: true });
 }
 
+function build_env() {
+  fs.cpSync(".env", "dist/.env", { recursive: true });
+}
+
 build_scss();
 build_views();
 build_images();
+build_env();

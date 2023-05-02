@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SHShare is a file sharing application to transfer files over local network">
+    <meta name="author" content="Hadzhilov Serhii">
+
+    <link rel="icon" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+
+    <title>SHShare</title>
+</head>
+
+<body>
+    <%- include("widgets/menu.ejs") %>
+    <div id="register" class="registration">
+        <div class="container">
+            <h1 class="registration__header">Sign Up</h1>
+            <p class="registration__desc">
+                Fill out the form below to sign up for Tivo.<br>
+                Already signed up? Then just Log In
+            </p>
+            <form class="registration__form">
+                <div id="email" class="registration__item">
+                    <label>Email*</label>
+                    <input type="email">
+                </div>
+                <div id="name" class="registration__item">
+                    <label>Name*</label>
+                    <input type="text">
+                </div>
+                <div id="password" class="registration__item">
+                    <label>Password*</label>
+                    <input type="password">
+                </div>
+                <a id="send_register" class="registration__button button button-inverse" href="#">Send</a>
+            </form>
+        </div>
+    </div>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

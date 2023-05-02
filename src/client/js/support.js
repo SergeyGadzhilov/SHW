@@ -1,6 +1,6 @@
 import { Server } from "./server";
 
-function FormField(control) {
+function SupportFormField(control) {
   const self = this;
   let _field = control;
   let _control = _field.querySelector(".support_form__control");
@@ -35,13 +35,16 @@ function FormField(control) {
   };
 }
 
-export function SupportForm() {
+export function SupportForm(control) {
   const self = this;
-  let _control = document.querySelector("#support_form");
-  let _name = new FormField(_control.querySelector("#support_form_name"));
-  let _email = new FormField(_control.querySelector("#support_form_email"));
-  let _message = new FormField(_control.querySelector("#support_form_message"));
-  let _send = _control.querySelector("#support_form_send");
+  let _name = new SupportFormField(control.querySelector("#support_form_name"));
+  let _email = new SupportFormField(
+    control.querySelector("#support_form_email")
+  );
+  let _message = new SupportFormField(
+    control.querySelector("#support_form_message")
+  );
+  let _send = control.querySelector("#support_form_send");
 
   if (_send) {
     _send.onclick = async function () {

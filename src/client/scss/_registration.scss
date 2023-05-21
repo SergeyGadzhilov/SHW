@@ -50,4 +50,16 @@
             }
         }
     }
+
+    &__error {
+        display: none;
+        color: #f3f7fd;
+        background-color: #ed4347;
+        padding: 0.5rem;
+        margin-bottom: 1.25rem;
+
+        &-show {
+            display: block;
+        }
+    }
 }

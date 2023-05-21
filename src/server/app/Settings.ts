@@ -28,6 +28,20 @@ export class Settings {
     };
   }
 
+  get session(): CookieSessionInterfaces.CookieSessionOptions {
+    return {
+      name: "session",
+      secret: process.env.SESSION_SECRET ? process.env.SESSION_SECRET : "",
+      maxAge: process.env.SESSION_MAX_AGE
+        ? parseInt(process.env.SESSION_MAX_AGE)
+        : 86400,
+      sameSite: "lax",
+      path: "/",
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+    };
+  }
+
   get port(): string {
     return process.env.PORT ? process.env.PORT : "8000";
   }

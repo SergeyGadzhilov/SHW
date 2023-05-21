@@ -1,12 +1,18 @@
 import express, { Express, Router } from "express";
+import cookieParser from "cookie-parser";
+import cookieSession from "cookie-session";
+import { Settings } from "./Settings";
 
 export class Application {
   private _app: Express = express();
+  private _settings: Settings = Settings.getInstance();
 
   constructor() {
     this._app.set("view engine", "ejs");
     this._app.use(express.json());
     this._app.use(express.urlencoded({ extended: true }));
+    this._app.use(cookieParser());
+    this._app.use(cookieSession(this._settings.session));
   }
 
   registerStatic(dir: string) {

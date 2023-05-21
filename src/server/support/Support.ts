@@ -5,7 +5,7 @@ import { ITicket } from "./Ticket";
 export class Support {
   public async createTicket(ticket: ITicket) {
     const db = Database.getInstance();
-    const user = await db.query<OkPacket>(
+    await db.query<OkPacket>(
       "INSERT INTO ticket (name, email, message) VALUES(?,?,?)",
       [ticket.name, ticket.email, ticket.message]
     );

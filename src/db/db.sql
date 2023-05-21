@@ -43,6 +43,8 @@ CREATE TABLE IF NOT EXISTS user_roles(
         ON DELETE CASCADE
 );
 
+CREATE UNIQUE INDEX user_email ON users (email);
+
 INSERT INTO roles (name) VALUES ('user');
 INSERT INTO roles (name) VALUES ('moderator');
 INSERT INTO roles (name) VALUES ('admin');

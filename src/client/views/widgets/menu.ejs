@@ -12,7 +12,11 @@
             <ul class="menu_items">
                 <li><a class="menu_link menu_link-active" href="/">Home</a></li>
                 <li><a class="menu_link" href="/#features">Features</a></li>
+                <% if(locals.user_id){ %>
                 <li><a class="menu_link" href="/#download">Download</a></li>
+                <% } else { %>
+                <li><a class="menu_link" href="/accounts/login">Download</a></li>
+                <% } %>
                 <li><a class="menu_link" href="/#help">Help</a></li>
             </ul>
         </div>

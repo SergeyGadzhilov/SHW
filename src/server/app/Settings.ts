@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import { SignOptions } from "jsonwebtoken";
 import Pool from "mysql2/typings/mysql/lib/Pool";
 
 export class Settings {
@@ -44,5 +45,17 @@ export class Settings {
 
   get port(): string {
     return process.env.PORT ? process.env.PORT : "8000";
+  }
+
+  get jwtSecret(): string {
+    return process.env.JWT_SECRET ? process.env.JWT_SECRET : "";
+  }
+
+  get jwtOptions(): SignOptions {
+    return {
+      algorithm: "HS256",
+      allowInsecureKeySizes: true,
+      expiresIn: 86400,
+    };
   }
 }

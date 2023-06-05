@@ -1,7 +1,7 @@
 import { Server } from "./server";
 import { csrf } from "./csrf";
 
-function SignUpFormField(control) {
+function AccountFormField(control) {
   let self = this;
   let _input = control.querySelector("input");
 
@@ -32,7 +32,7 @@ function SignUpFormField(control) {
   };
 }
 
-function SignUpFormError(control) {
+function AccountFormError(control) {
   let self = this;
 
   self.show = function (message) {
@@ -48,12 +48,11 @@ function SignUpFormError(control) {
   };
 }
 
-export function SignUpForm(control) {
-  let _email = new SignUpFormField(control.querySelector("#email"));
-  let _name = new SignUpFormField(control.querySelector("#name"));
-  let _password = new SignUpFormField(control.querySelector("#password"));
-  let _send = control.querySelector("#send_register");
-  let error = new SignUpFormError(
+export function AccountForm(control) {
+  let _email = new AccountFormField(control.querySelector("#email"));
+  let _password = new AccountFormField(control.querySelector("#password"));
+  let _send = control.querySelector("#send");
+  let error = new AccountFormError(
     control.querySelector(".registration__error")
   );
   const _csrf = new csrf(control);
@@ -62,8 +61,7 @@ export function SignUpForm(control) {
     _send.onclick = async function () {
       if (self.validate()) {
         const server = new Server();
-        const response = await server.post("signup", {
-          name: _name.value(),
+        const response = await server.post("login", {
           email: _email.value(),
           password: _password.value(),
           csrf: _csrf.value(),
@@ -72,7 +70,7 @@ export function SignUpForm(control) {
         if (response.status === "OK") {
           error.clear();
           self.clear();
-          document.location.href = "/accounts/login";
+          document.location.href = "/";
         } else {
           error.show(response.message);
         }
@@ -81,12 +79,11 @@ export function SignUpForm(control) {
   }
 
   self.validate = function () {
-    return _email.validate() && _name.validate() && _password.validate();
+    return _email.validate() && _password.validate();
   };
 
   self.clear = function () {
     _email.clear();
-    _name.clear();
     _password.clear();
   };
 }

@@ -20,7 +20,7 @@ accounts.post(
     user.email = req.body.email;
     user.password = hashSync(req.body.password, 8);
 
-    if (user.name && user.email && user.password) {
+    if (!user.name || !user.email || !user.password) {
       return response.json({
         status: "Error",
         message: "name, email and password are required",
